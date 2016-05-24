@@ -1,0 +1,12 @@
+<testdata>
+	<vars name="Tag 1" slug ="selenium-webdriver1"  Description ="Description 1"/>
+	<vars name="Tag 2" slug ="selenium-webdriver2"  Description ="Description 2"/>
+	<vars name="Tag 3" slug ="selenium-webdriver3"  Description ="Description 3"/>
+	<vars name="Tag 4" slug ="selenium-webdriver77"  Description ="Description 4"/>
+	<vars name="Tag 5" slug ="selenium-webdriver88"  Description ="Description 5"/>
+	<vars name="Tag 6" slug ="Sselenium-webdriver6"  Description ="Description 6"/>
+	<vars name="Tag 7" slug ="selenium-webdriver7"  Description ="Description 7"/>
+	<vars name="Tag 8" slug ="selenium-webdriver8"  Description ="Description 8"/>	
+	<vars name="Tag 9" slug ="selenium-webdriver9"  Description ="Description 9"/>
+	<vars name="Tag 10" slug ="selenium-webdriver10"  Description ="Description 10"/>					
+</testdata>

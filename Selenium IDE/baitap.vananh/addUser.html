@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>addUser</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">addUser</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/selenium-digitest/wp-login.php?loggedout=true</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_login</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_pass</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=wp-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Add New')])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=user_login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_login</td>
+	<td>javascript{&quot;username_&quot; + Math.random().toString(36).substring(2,12);}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>javascript{&quot;email2_&quot; + Math.random().toString(36).substring(2,12)+ &quot;@gmail.com&quot;;}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=first_name</td>
+	<td>FirstName2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=last_name</td>
+	<td>LastName2</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=url</td>
+	<td>website21.com</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=createusersub</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#message &gt; p</td>
+	<td>New user created. Edit user</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Log Out</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=p.message</td>
+	<td>You are now logged out.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

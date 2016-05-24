@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/selenium-digitest/wp-login.php" />
+<title>addNewUser</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">addNewUser</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/selenium-digitest/wp-login.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_login</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_pass</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=wp-submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>forXml</td>
+	<td>file://f:/data.xml</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//a[contains(text(),'Add New')])[6]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_login</td>
+	<td>${User}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>${Email}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=first_name</td>
+	<td>${Firstname}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=last_name</td>
+	<td>${Lastname}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=url</td>
+	<td>${Website}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=send_user_notification</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=role</td>
+	<td>label=${Label}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>id=createusersub</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=#message &gt; p</td>
+	<td>New user created. Edit user</td>
+</tr>
+<tr>
+	<td>endForXml</td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>

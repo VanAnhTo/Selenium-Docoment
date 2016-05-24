@@ -1,0 +1,5 @@
+<testdata>
+	<vars username="admin1" pass="123456"/>
+	<vars username="admin2" pass="123456"/>
+	<vars username="admin" pass="123456"/>
+</testdata>

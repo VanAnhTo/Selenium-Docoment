@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>addUser1_DataDriven</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">addUser1_DataDriven</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/selenium-digitest/wp-login.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_login</td>
+	<td>admin</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_pass</td>
+	<td>123456</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=.//*[@id='wp-submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>forXml</td>
+	<td>File://F:\Selenium\Datatest\UserDataTest.xml</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=.//*[@id='menu-users']/ul/li[3]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=user_login</td>
+	<td>${username}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=email</td>
+	<td>${email}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=first_name</td>
+	<td>${firstname}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=last_name</td>
+	<td>${lastname}</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=url</td>
+	<td>${url}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=.//*[@id='createuser']/table/tbody/tr[6]/td/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=send_user_notification</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>3000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>xpath=.//*[@id='role']</td>
+	<td>label=${role}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=createusersub</td>
+	<td></td>
+</tr>
+<tr>
+	<td>pause</td>
+	<td>5000</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>xpath=.//*[@id='message']/p</td>
+	<td>New user created. Edit user</td>
+</tr>
+<tr>
+	<td>endForXml</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=.//*[@id='wp-admin-bar-logout']/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>xpath=.//*[@id='login']/p[1]</td>
+	<td>You are now logged out.</td>
+</tr>
+</tbody></table>
+</body>
+</html>

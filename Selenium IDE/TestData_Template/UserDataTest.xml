@@ -1,0 +1,4 @@
+<testdata>
+	<vars username="john-ide" email ="john@digitest.vn"  firstname ="JH" lastname="john" url ="www.ide-test.com"  role="Author"/>
+	<vars username="john-ide-2" email ="john-dg@digitest.vn"  firstname ="JH2" lastname="john" url ="john"  role="Editor"/>
+</testdata>
