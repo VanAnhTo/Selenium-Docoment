@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+
 public class LoginZingId {
 	private WebDriver driver;
 	private String baseUrl;
@@ -28,25 +29,29 @@ public class LoginZingId {
 	@Test
 	public void testLoginZing() throws Exception
 	{
-		driver.get(baseUrl);
-		driver.findElement(By.id("login_account")).sendKeys("vananhto112233");
-		driver.findElement(By.id("login_pwd")).sendKeys("123321");
-		driver.findElement(By.className("zidsignin_btn")).click();
-		
-		String exLogin ="vananhto112233";
-		String actualLogin = driver.findElement(By.className("infotext")).getText();
-		assertEquals(exLogin,actualLogin);
-		
-		if (actualLogin.contentEquals(exLogin))
+		try
 		{
-		System.out.println("Test Passed.");
-		} 
-		else {
-		System.out.println("Test Failed!");
+			driver.get(baseUrl);
+			driver.findElement(By.id("login_account")).sendKeys("vananhto112233");
+			driver.findElement(By.id("login_pwd")).sendKeys("123321");
+			driver.findElement(By.className("zidsignin_btn")).click();
+			
+			String exLogin ="vananhto112233";
+			String actualLogin = driver.findElement(By.className("infotext")).getText();
+			assertEquals(exLogin,actualLogin);
+			
+			if (actualLogin.contentEquals(exLogin))
+			{
+			System.out.println("Test Passed.");
+			} 
+			else {
+			System.out.println("Test Failed!");
+			}
 		}
-
-		
-		
+		catch(Exception e)
+		{
+			System.out.println("Failed");
+		}	
 		
 	}
 	
