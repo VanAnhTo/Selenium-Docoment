@@ -1,0 +1,97 @@
+package kinhdoanhduoc;
+
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import Common.Util;
+
+public class AddNguyenlieu2a {
+	private WebDriver driver;
+	
+	@Before
+	public void setUp() throws Exception
+	{
+		driver = new FirefoxDriver();		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	
+	@Test
+	public void testAdd2a() throws Exception
+	{
+		
+		// dang nhap
+		driver.get(Util.URL);
+		driver.findElement(By.cssSelector(" .bginput input[type=text]")).clear();;
+		driver.findElement(By.cssSelector(" .bginput input[type=text]")).sendKeys(Util.USENAME);
+		driver.findElement(By.cssSelector(" .bginput input[type=password]")).clear();;
+		driver.findElement(By.cssSelector(" .bginput input[type=password]")).sendKeys(Util.PASS);			
+		driver.findElement(By.cssSelector(" .btn-login button:nth-child(1)")).click();
+		//them moi nguyen lieu
+		int n =5;
+		for(int i=1; i<=n; i++)
+		{
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector(" #tabContent .group:nth-child(1)")).click();
+		//them moi 2a
+		driver.findElements(By.cssSelector(".z-div .z-label")).get(0).click();
+		Thread.sleep(2000);
+		//thong tin chung don hang
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-combobox-inp.z-combobox-right-edge")).get(0).sendKeys("Cong ty co phan duoc Nam Ha");
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(0).sendKeys("SDH/2016/"+Util.getDefauldTime());
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(1).sendKeys("Ha Noi");
+		driver.findElements(By.cssSelector(".z-checkbox input")).get(2).click();
+		//*******Chi tieet don hang
+		
+		for(int j=1 ; j<=n; j++)
+		{
+			Thread.sleep(2000);
+		//Ten nguyen lieu
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-combobox-inp.z-combobox-right-edge")).get(1).sendKeys("Nguyen lieu thuong 2a "+ Util.getDefauldTime());
+		//Hamluong, dang bao che
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(2).sendKeys("Ham luong, dang bao che"+Util.getDefauldTime());
+		// dpn vi tinh
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-combobox-inp.z-combobox-right-edge")).get(2).sendKeys("lit");
+		//quy cach dong goi
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(3).sendKeys("Quy cach dong goi"+Util.getDefauldTime());
+		//so luong
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(4).sendKeys(Util.getDefauldTime());
+		//tieu chuan chat luong
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(5).sendKeys("Tieu chuan chat luong"+Util.getDefauldTime());
+		//So dang ky cua 
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(6).sendKeys("SDK"+Util.getDefauldTime());
+		//Nha san xuat
+		driver.findElements(By.cssSelector(" .z-chosenbox .z-chosenbox-inp")).get(0).click();
+		driver.findElements(By.cssSelector("div:nth-child(10)")).get(1).click();
+		driver.findElements(By.cssSelector(" .z-chosenbox .z-chosenbox-inp")).get(0).click();
+		driver.findElements(By.cssSelector("div:nth-child(9)")).get(1).click();
+		//driver.findElements(By.cssSelector(".z-chosenbox-pp.z-chosenbox-pp-hidden .z-chosenbox-option:nth-child(10)")).get(0).click();
+		//Cty cung cap
+		//driver.findElements(By.cssSelector(".z-chosenbox-pp.z-chosenbox-pp-hidden .z-chosenbox-option:nth-child(10)")).get(1).click();
+		driver.findElements(By.cssSelector(" .z-chosenbox .z-chosenbox-inp")).get(1).click();
+		driver.findElements(By.cssSelector("div:nth-child(6)")).get(2).click();
+		//Them
+		driver.findElements(By.cssSelector(".button.z-button-os")).get(2).click();
+		Thread.sleep(2000);
+		
+		}	
+		
+		//luu
+		driver.findElements(By.cssSelector(".button.z-button-os")).get(5).click();
+		
+		
+		}
+		driver.quit();
+	}
+	
+	@After
+	public void teatDown() throws Exception{
+		driver.quit();
+	}
+	
+}
