@@ -1,0 +1,102 @@
+package kinhdoanhduoc;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import Common.Util;
+
+public class AddNguyenlieu2dd {
+	private WebDriver driver;
+	@Before
+	public void setUp() throws Exception
+	{
+		driver = new FirefoxDriver();		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+	
+	@Test
+	public void testAdd2dd() throws Exception
+	{
+		//Dang nhap
+		driver.get(Util.URL);
+		driver.findElement(By.cssSelector(" .bginput input[type=text]")).clear();;
+		driver.findElement(By.cssSelector(" .bginput input[type=text]")).sendKeys(Util.USENAME);
+		driver.findElement(By.cssSelector(" .bginput input[type=password]")).clear();;
+		driver.findElement(By.cssSelector(" .bginput input[type=password]")).sendKeys(Util.PASS);			
+		driver.findElement(By.cssSelector(" .btn-login button:nth-child(1)")).click();
+		
+		int n=2;
+		for(int i=1; i<=n ; i++)
+		{		
+		//them moi nguyen lieu
+		Thread.sleep(2000);
+		driver.findElement(By.cssSelector(" #tabContent .group:nth-child(1)")).click();
+		
+		//them moi 2dd
+		driver.findElements(By.cssSelector(".z-div .z-label")).get(1).click();
+		
+		//thong tin chung don hang
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-combobox-inp.z-combobox-right-edge")).get(0).sendKeys("Cong ty co phan duoc Nam Ha");
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(0).sendKeys("SDH/2016/"+Util.getDefauldTime());
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(1).sendKeys("Ha Noi");
+		driver.findElements(By.cssSelector(".z-checkbox input")).get(2).click();
+		//Chi tiet don hang
+		for (int j =1; j<=n; j++)
+		{
+		//Ten nguyen lieu
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-combobox-inp.z-combobox-right-edge")).get(1).sendKeys("Nguyen lieu 2dd"+Util.getDefauldTime());
+		//ham luong
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(2).sendKeys("Ham Luong, dang bao che "+Util.getDefauldTime());
+		//don vi tinh
+		driver.findElements(By.cssSelector(" .z-combobox .z-combobox-inp")).get(2).sendKeys("kg");
+		//so luong
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(3).sendKeys(Util.getDefauldTime());
+		//Tieu chuan chat luong
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(4).sendKeys("Tieu chuan chat luong "+Util.getDefauldTime());
+
+		//ten cty SX
+		driver.findElements(By.cssSelector(" .z-chosenbox .z-chosenbox-inp")).get(1).click();
+		driver.findElements(By.cssSelector(".z-chosenbox-sel div:nth-child(2)")).get(1).click();		
+		driver.findElements(By.cssSelector(" .z-chosenbox .z-chosenbox-inp")).get(1).click();
+		driver.findElements(By.cssSelector(".z-chosenbox-sel div:nth-child(1)")).get(1).click();	
+		//Ten cy CC
+		driver.findElements(By.cssSelector(" .z-chosenbox .z-chosenbox-inp")).get(0).click();
+		driver.findElements(By.cssSelector(".z-chosenbox-sel div:nth-child(3)")).get(1).click();
+		
+		//Them		
+		//SKD
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(5).sendKeys("SDK/"+Util.getDefauldTime());
+		//Hoat chat
+		//driver.findElements(By.cssSelector(" .z-chosenbox .z-chosenbox-inp")).get(2).click();
+		//driver.findElements(By.cssSelector(".z-chosenbox-sel div:nth-child(2)")).get(1).click();
+		//nong do
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(6).sendKeys("Nong do"+Util.getDefauldTime());
+		//ham luong
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .z-textbox")).get(7).sendKeys("Ham luong"+Util.getDefauldTime());		
+		//check cam ket
+		driver.findElements(By.cssSelector(".z-checkbox input")).get(4).click();		
+		
+		//Luu ho so khoan donhang
+		driver.findElements(By.cssSelector(".z-groupbox-cnt .button.z-button-os")).get(3).click();
+		
+		}
+		
+		//Luu toan bo don hang
+		driver.findElements(By.cssSelector(".z-window-embedded-cnt-noborder .button.z-button-os")).get(6).click();
+		
+		
+		}
+		
+	}
+	
+	@After
+	public void teatDown() throws Exception{
+		driver.quit();
+	}
+}
