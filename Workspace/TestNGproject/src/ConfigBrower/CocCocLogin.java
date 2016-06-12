@@ -1,4 +1,4 @@
-package Test;
+package ConfigBrower;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -6,21 +6,28 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class ChromeLogin {
+public class CocCocLogin {
 	private WebDriver driver;
 	String baseUrl;
 
 	@BeforeTest
 	public void launchBrowser() {
-		System.setProperty("webdriver.chrome.driver",
-				"F:/Selenium/N8/TestNG/chromedriver.exe");
-		driver = new ChromeDriver();		
 		
-		driver.manage().window().maximize();		
+		// Path to the ChromeDriver.
+		System.setProperty("webdriver.chrome.driver",
+						"F:/Selenium/N8/TestNG/chromedriver.exe");
+		// Path to the Coccoc browser.
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--start-maximized");
+		options.setBinary("C:/Users/VanEm/AppData/Local/CocCoc/Browser/Application/browser.exe");
+		driver = new ChromeDriver(options);
+		
+		//driver.manage().window().maximize();		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		baseUrl = "http://localhost/selenium-digitest/wp-login.php";
 	}
@@ -28,6 +35,7 @@ public class ChromeLogin {
 	@Test(priority = 4, enabled = true)
 	public void verifyLogin() throws InterruptedException, IOException {
 		driver.get(baseUrl);
+		Thread.sleep(3000);
 		driver.findElement(By.id("user_login")).sendKeys("admin");
 		driver.findElement(By.id("user_pass")).sendKeys("123456");
 		driver.findElement(By.id("wp-submit")).click();			
@@ -36,17 +44,18 @@ public class ChromeLogin {
 		String acMess= driver.findElement(By.xpath(".//*[@id='welcome-panel']/div/h2")).getText();
 		if(exMess.contentEquals(acMess))
 		{
-			System.out.println("Pass");
+			System.out.println("Login Passed");
 		}
 		else
 		{
-			System.out.println("Fail");
+			System.out.println("Login Failed");
 		}
 	}
 		
 	@Test(priority = 0, enabled = true)
 	public void verifyPass() throws InterruptedException, IOException {
 		driver.get(baseUrl);
+		Thread.sleep(3000);
 		driver.findElement(By.id("user_login")).sendKeys("admin");
 		driver.findElement(By.id("user_pass")).sendKeys("456");
 		driver.findElement(By.id("wp-submit")).click();			
@@ -67,6 +76,7 @@ public class ChromeLogin {
 	@Test(priority = 2, enabled = true)
 	public void verifyUsername() throws InterruptedException, IOException {
 		driver.get(baseUrl);
+		Thread.sleep(3000);
 		driver.findElement(By.id("user_login")).sendKeys("admin1");
 		driver.findElement(By.id("user_pass")).sendKeys("123456");
 		driver.findElement(By.id("wp-submit")).click();			
@@ -80,13 +90,13 @@ public class ChromeLogin {
 		else
 		{
 			System.out.println("Not verifed usename");
-		}
-		
+		}		
 	}
 	
 	@Test(priority = 1, enabled = true)
 	public void verifyUsernamePass() throws InterruptedException, IOException {
 		driver.get(baseUrl);
+		Thread.sleep(3000);
 		driver.findElement(By.id("user_login")).sendKeys("admin1");
 		driver.findElement(By.id("user_pass")).sendKeys("123456");
 		driver.findElement(By.id("wp-submit")).click();			

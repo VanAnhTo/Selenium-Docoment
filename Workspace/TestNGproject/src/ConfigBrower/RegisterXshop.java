@@ -1,4 +1,4 @@
-package Test;
+package ConfigBrower;
 
 import java.util.concurrent.TimeUnit;
 
