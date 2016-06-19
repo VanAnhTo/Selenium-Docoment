@@ -14,9 +14,9 @@ public class ObjLogin {
 	
 	//success
 	public static final String expectedTitle = "Catalog";
-	//invalid email
+	//invalid email	
 	public static final String expectedMessInvalidEmail = "Invalid email address";
-	public static By actualMessInvalidEmail = By.cssSelector("table > tbody > tr:nth-child(1) > td.email-field.field > div > span > p");
+	public static By actualMessInvalidEmail = By.cssSelector(".error");
 	//without password
 	public static final String expectedMessWithoutPass = "This field is required";
 	public static By actualMessWithoutPass = By.cssSelector("table > tbody > tr:nth-child(2) > td.password-field.field > div > span > p");
@@ -33,6 +33,6 @@ public class ObjLogin {
 	public static By actualMessWithoutEmail = By.cssSelector("table > tbody > tr:nth-child(1) > td.email-field.field > div > span > p");
 	
 	//forgot password
-	public static final String expectMessForgotPass= "Forgot password?";
-	public static By actualMessForgotPass = By.cssSelector("#ui-id-8");
+	public static final String expectMessForgotPass= "Back to Login form";
+	public static By actualMessForgotPass = By.linkText("Back to Login form");
 }
