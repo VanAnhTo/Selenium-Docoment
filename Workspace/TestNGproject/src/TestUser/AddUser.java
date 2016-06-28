@@ -21,7 +21,7 @@ public class AddUser {
 	public void launchBrowser() {
 		System.setProperty("webdriver.chrome.driver",Util.CHROME_DRIVER);
 		driver = new ChromeDriver();		
-		//driver.manage().window().maximize();		
+		driver.manage().window().maximize();		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 	}
