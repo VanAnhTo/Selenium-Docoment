@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -9,10 +9,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Common.OpenBrowser;
-import Common.Util;
-import PageObject.*;
-import Common.*;
+import common.*;
+import pageObject.*;
 
 public class TestLogin {
 	

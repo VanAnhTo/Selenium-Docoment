@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -9,10 +9,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Common.ExcelCommon_POI;
-import Common.OpenBrowser;
-import Common.Util;
-import PageObject.ObjSign;
+import common.ExcelCommon_POI;
+import common.OpenBrowser;
+import common.Util;
+import pageObject.ObjSign;
 
 public class TestSign {
 

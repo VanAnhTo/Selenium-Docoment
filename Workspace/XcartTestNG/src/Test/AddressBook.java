@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -8,11 +8,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Common.ExcelCommon_POI;
-import Common.OpenBrowser;
-import Common.Util;
-import PageObject.ObjAddressBook;
-import PageObject.ObjLogin;
+import common.ExcelCommon_POI;
+import common.OpenBrowser;
+import common.Util;
+import pageObject.ObjAddressBook;
+import pageObject.ObjLogin;
 
 public class AddressBook {
 
