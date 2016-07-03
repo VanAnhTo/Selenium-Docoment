@@ -5,12 +5,16 @@ import org.openqa.selenium.By;
 public class ObjLogin {
 	
 	public static By linkLogin = By.cssSelector("#header-bar > ul > li.account-link-1.first > a");
+	
+	
 	public static By txtEmail = By.id("login-email");
 	public static By txtPass = By.id("login-password");
 	public static By btnSignIn = By.cssSelector("table > tbody > tr:nth-child(3) > td:nth-child(2) > button > span");
 	
 	public static By linkLogOut = By.cssSelector("#header-bar > ul > li.account-link-1.last > a");
 	public static By linkForgotPass = By.linkText("Forgot password?");
+	
+	
 	
 	//success
 	public static final String expectedTitle = "Catalog";

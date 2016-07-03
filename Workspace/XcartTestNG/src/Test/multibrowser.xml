@@ -10,20 +10,20 @@
 
 	<!-- <test name="Test login in chrome"> <parameter name="browser" value="chrome" 
 		/> <classes> <class name="Test.TestSign" /> </classes> </test> -->
-<!-- 
+
  	<test name="Test login in chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="test.SignupDigitestForum" />
+			<class name="test.Contact" />
 		</classes>
-	</test> -->
-
+	</test>
+<!-- 
 	 <test name="Test login in chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="seleniumDigitest.AddUserDigitest" />
 		</classes>
-	</test>  
+	</test>   -->
 
 
 

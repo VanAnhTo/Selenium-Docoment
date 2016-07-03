@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -7,10 +7,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import Common.OpenBrowser;
-import Common.Util;
-import PageObject.ObjContact;
-import Common.ExcelCommon_POI;
+import common.ExcelCommon_POI;
+import common.OpenBrowser;
+import common.Util;
+import pageObject.ObjContact;
+
 import org.openqa.selenium.By;
 
 public class Contact {
@@ -38,7 +39,7 @@ public class Contact {
 					ObjContact.txtMessage
 			};
 			for(int rowStart = 1; rowStart <= rowsInSheet; rowStart++){
-				Util.driver.get(Util.URL+"?target=contact_us");				
+				Util.driver.get(Util.URL_DIGITEST+"contact/");				
 				for(int i = 0; i < controls.length; i++){
 					temp = ExcelCommon_POI.getCellData(rowStart,column++,ExcelWsheet);
 					Util.driver.findElement(controls[i]).sendKeys(temp);
